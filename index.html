@@ -142,7 +142,7 @@
         <div class="details">
             <p>请求状态: <span>已拦截</span></p>
             <p>限制原因: <span>访问频率过高</span></p>
-            <p>预计解除: <span id="timer">300</span> 秒后</p>
+            <p>预计解除: <span id="timer">60</span> 秒后</p>
         </div>
 
         <br>
@@ -155,7 +155,7 @@
 
     <script>
         // 倒计时功能
-        let seconds = 300;
+        let seconds = 60;
         const timerElement = document.getElementById('timer');
         
         const countdown = setInterval(() => {
@@ -164,7 +164,7 @@
             
             if (seconds <= 0) {
                 clearInterval(countdown);
-                timerElement.textContent = '已解除';
+                timerElement.textContent = '限制访问可能已解除，可重试';
                 timerElement.style.color = '#2ed573';
             }
         }, 1000);
